@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<div class="container  d-flex flex-column justify-content-center vh-100">
+    <div class="img_container p-3 d-flex justify-content-center">
+        <img src="{% static 'images/folder.png' %}" alt="">
+    </div>
+
+    <div class="container d-flex justify-content-center align-items-center flex-column gap-3">
+        <div class="rounded bg-light p-3 w-50 text-center">
+            Drag or Drop your files or <u>Browse</u>
+        </div>
+        
+        <div class="uploadFile p-1 text-center">
+            <input type="file" name="" placeholder="Upload File" id="">
+        </div>
+        
+        <div class="btn btn-warning p-2 w-25 text-center">
+            <span>Click me to copy current URL</span>
+        </div>
+        
+        <div class="text-center">
+            Have you already clicked?
+        </div>
+    </div>
+</div>
+{% endblock content %}
