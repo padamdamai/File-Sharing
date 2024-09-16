@@ -42,7 +42,7 @@
 
         <div class="background">
             <center>
-              <button class="clipboard">Click me to copy current Url</button>
+              <button onclick="copyClip()" class="clipboard">Click me to copy current Url</button>
               <p>Have you already clicked?</p>
             </center>
             </div>
@@ -64,7 +64,7 @@
         const pond = FilePond.create(
             document.querySelector('.my-pond')
         );
-
+var url = null
     function upload_file(){
         var files = pond.getFiles()
 
@@ -80,8 +80,20 @@
         }).then(response=>response.json())
         .then(result=>{
             console.log(result)
+
+            url = `http://127.0.0.1:8000/downloadFile/${result.data.folder}`
         })
     }
+
+
+    function copyClip() {
+            console.log('dd')
+            /* Copy the text inside the text field */
+            navigator.clipboard.writeText(url);
+
+            /* Alert the copied text */
+            alert("Copied the text: " + url);
+        }
   </script>
 
 </body>
