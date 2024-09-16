@@ -17,6 +17,7 @@ def download(request , uid):
 
 class HandleFileUpload(APIView):
     parser_classes = [MultiPartParser]
+    
     def post(self , request):
         try:
             data = request.data
